@@ -1,51 +1,48 @@
-import { TouchableOpacity, Alert } from 'react-native';
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-
-
-export default function ProfileCard({ name, role, imageSource }) {
-  function handlePress() {
-  Alert.alert(`${name}’in profiline dokundunuz.`);
-}
-    return (
-       <TouchableOpacity style={styles.card} onPress={handlePress}>
-            <Image source={imageSource} style={styles.profileImage} />  
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.role}>{role}</Text>
-       </TouchableOpacity>
-    );
+function ProfileCard({ name, role, imageSource }) {
+  const handlePress = () => {
+    Alert.alert("Profil Seçildi", ` ${name}'s profile.`);
+  }
+  return (
+    <TouchableOpacity onPress={handlePress}>
+    <View style={styles.card}>
+      <Image source={imageSource} style={styles.avatar} />
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.role}>{role}</Text>
+    </View>
+    </TouchableOpacity>
+  );
 }
 
-
+// ✅ return dışında tanımlandı
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',     
-    padding: 16,                 
-    borderRadius: 12,            
-    alignItems: 'center',        
-    marginVertical: 10,     
-    
-    shadowColor: '#000',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: "center",
+    marginVertical: 10,
+    backgroundColor: "#fff",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    elevation: 3, 
-    
-
+    elevation: 3,
   },
   avatar: {
-    width: 100,               
-    height: 100,                
-    borderRadius: 50,            
-    marginBottom: 10,            
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginBottom: 10,
   },
   name: {
-    fontSize: 18,                
-    fontWeight: 'bold',          
+    fontSize: 18,
+    fontWeight: "bold",
   },
   role: {
-    fontSize: 14,                
-    color: '#666',               
+    fontSize: 14,
+    color: "gray",
   },
 });
+
+export default ProfileCard;
