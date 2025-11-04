@@ -1,3 +1,4 @@
+//Elif Eylül Demir 220404052 
 import { ScrollView, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileCard from './components/ProfileCard';

@@ -1,3 +1,4 @@
+//Elif Eylül Demir 220404052 
 import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function ProfileCard({ name, role, imageSource }) {
@@ -15,7 +16,7 @@ function ProfileCard({ name, role, imageSource }) {
   );
 }
 
-// ✅ return dışında tanımlandı
+
 const styles = StyleSheet.create({
   card: {
     padding: 20,
