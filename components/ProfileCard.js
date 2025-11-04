@@ -1,10 +1,19 @@
-function ProfileCard({ name, role, imageSource }) {
+import { TouchableOpacity, Alert } from 'react-native';
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
+
+
+
+export default function ProfileCard({ name, role, imageSource }) {
+  function handlePress() {
+  Alert.alert(`${name}’in profiline dokundunuz.`);
+}
     return (
-        <View style={styles.card}>
+       <TouchableOpacity style={styles.card} onPress={handlePress}>
             <Image source={imageSource} style={styles.profileImage} />  
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.role}>{role}</Text>
-        </View>
+       </TouchableOpacity>
     );
 }
 
